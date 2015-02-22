@@ -78,10 +78,7 @@ class Cmus(IntervalModule):
     def run(self):
         status = self._query_cmus()
         if not status:
-            self.output = {
-                "full_text": 'Not running',
-                "color": self.color
-            }
+            self.output = {}
             return
         fdict = {
             'file': status.get('file', ''),
